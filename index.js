@@ -206,18 +206,20 @@ export const artists = [
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Practice accessing data above by console.log-ing following items:
 (no functions needed) */
-
+//array name is artists
 //(1) Name of the first artist (0th index) in the array
-
+console.log(artists[0]);
 
 //(2) Bio of the third artist (2nd index) in the array 
-
+console.log(artists[2]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
+artists[8].name="Vincent Van Gogh";
+console.log(artists[8]);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -228,8 +230,8 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(inputArr, inputNum) {
+ return `the artist at index ${inputNum} is ${inputArr[inputNum].name}`;
 }  
 
 
@@ -241,10 +243,34 @@ Use get20s to do the following:
 
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
-
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function getYear(inputArtist){
+  var hasYears = false;
+  var getString = "";
+  var yearsArr = [];
+  if(inputArtist.years != null){
+    hasYears = true;
+  }
+  if(hasYears == true){
+    getString = inputArtist.years;
+    var year1 = getString.slice(0,4);
+    var year2 = getString.slice(7,11)
+    yearsArr.push(year1);
+    yearsArr.push(year2);
+    return yearsArr;
+  }
 }
+
+function get20s(inputArr){
+  var returnArtists = [];
+  for(var i = 0; i < inputArr.length; i++){
+    var tempArr = getYear(inputArr[i]);
+    if(tempArr[0] >= 1900 && tempArr[1] >= 1900){
+      returnArtists.push(inputArr[i].name);
+    }
+  }
+  return returnArtists;
+}
+
 
 
 
@@ -257,10 +283,10 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(inputArr, indexNum){
+   inputArr.splice(indexNum, 1);
+   return inputArr.length;
 }
-   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -278,9 +304,18 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+function addArtist(inputArr){
+  var myObj =  { 
+    id: 20,
+    name: "Marcus Flores", 
+    years: "2000 - current day",
+    genre: "Web Design", 
+    nationality: "American",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui id ornare arcu odio."
+  }    
+  inputArr.push(myObj);
+  return inputArr;
+}
 
   
 
@@ -291,8 +326,14 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(inputArr){
+  var tempArr = [];
+  for(var i = 0; i < inputArr.length; i++){
+    if(inputArr[i].paintings > 100){
+    tempArr.push(inputArr[i].name);
+    }
+  }
+  return tempArr;
 }
 
 
@@ -341,7 +382,7 @@ function randomize(/* Code here */){
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
  
- 
+ const teter = "tot";
  
  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
  function foo(){
