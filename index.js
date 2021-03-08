@@ -341,7 +341,7 @@ function randomize(/* Code here */){
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
  
- 
+ const teter = "tot";
  
  /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
  function foo(){
@@ -357,3 +357,4 @@ export default{
   addArtist,
   lotsOfArt
 }
+
