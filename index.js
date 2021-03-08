@@ -1,4 +1,4 @@
-/*export*/ const artists = [
+export const artists = [
     {
       "id": 0,
       "name": "Amedeo Modigliani",
@@ -271,7 +271,7 @@ function get20s(inputArr){
   return returnArtists;
 }
 
-console.log(get20s(artists));
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -388,7 +388,7 @@ function randomize(/* Code here */){
   console.log('its working');
   return 'bar';
 }
-/*Don't touch the code after this line! *//*
+/*Don't touch the code after this line! */
 export default{
   foo,
   getArtistByIndex,
@@ -396,4 +396,4 @@ export default{
   removeArtist,
   addArtist,
   lotsOfArt
-}*/
+}
