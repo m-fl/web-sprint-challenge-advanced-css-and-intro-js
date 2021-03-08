@@ -314,6 +314,7 @@ function addArtist(inputArr){
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat est velit egestas dui id ornare arcu odio."
   }    
   inputArr.push(myObj);
+  return inputArr;
 }
 
   
